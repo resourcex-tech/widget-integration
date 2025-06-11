@@ -6,6 +6,11 @@
     --text-color: #1a1a1a;
     --link-color: #0051ff;
     --sidebar-bg: #f7f7f7;
+    --table-bg: #ffffff;
+    --code-bg: #f5f5f5;
+    --border-color: #e0e0e0;
+    --button-bg: #ffffff;
+    --button-color: #000000;
 }
 
 /* Dark Mode */
@@ -14,9 +19,14 @@
     --text-color: #f1f1f1;
     --link-color: #4ca1ff;
     --sidebar-bg: #2c2c2c;
+    --table-bg: #2c2c2c;
+    --code-bg: #333333;
+    --border-color: #444;
+    --button-bg: #2c2c2c;
+    --button-color: #f1f1f1;
 }
 
-/* Apply variables */
+/* Apply theme variables */
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -28,4 +38,40 @@ body {
 
 a {
     color: var(--link-color);
+}
+
+button#theme-toggle {
+    background-color: var(--button-bg);
+    color: var(--button-color);
+    border: 1px solid var(--border-color);
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button#theme-toggle:hover {
+    opacity: 0.85;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--table-bg);
+}
+
+th, td {
+    border: 1px solid var(--border-color);
+    padding: 8px;
+    color: var(--text-color);
+}
+
+/* Code blocks */
+pre, code {
+    background-color: var(--code-bg) !important;
+    color: var(--text-color) !important;
+    font-family: monospace;
+    font-size: 14px;
+    padding: 6px;
+    border-radius: 4px;
 }

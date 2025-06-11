@@ -1,46 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Product Suite Integration Guide</title>
 
-  <!-- Docsify theme -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css" />
-  <!-- Light/Dark theme styles -->
+  <!-- Docsify Theme -->
+  <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"
+  />
+
+  <!-- Custom Theme Styling -->
   <link rel="stylesheet" href="theme.css" />
 </head>
 <body>
-<!-- Docsify root -->
+<!-- Docsify Mount Point -->
 <div id="app">Loading Product Suite Docs...</div>
 
-<!-- Theme toggle button -->
-<button id="theme-toggle" style="position: fixed; top: 10px; right: 10px; z-index: 999;">
-  Toggle Theme
+<!-- Theme Toggle Button (Icon) -->
+<button
+        id="theme-toggle"
+        title="Toggle Theme"
+        style="
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 999;
+      "
+>
+  🌙
 </button>
 
-<!-- Docsify config and script -->
+<!-- Docsify Init -->
 <script>
   window.$docsify = {
     name: 'Product Suite Integration',
     loadSidebar: true,
-    subMaxLevel: 2
+    subMaxLevel: 2,
   };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
 
-<!-- Toggle theme script -->
+<!-- Theme Toggle Logic -->
 <script>
   const btn = document.getElementById('theme-toggle');
   const root = document.documentElement;
+
+  function updateIcon(theme) {
+    btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+  }
+
   const saved = localStorage.getItem('theme') || 'light';
   root.setAttribute('data-theme', saved);
+  updateIcon(saved);
 
   btn.addEventListener('click', () => {
     const current = root.getAttribute('data-theme');
     const next = current === 'dark' ? 'light' : 'dark';
     root.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
+    updateIcon(next);
   });
 </script>
 </body>
