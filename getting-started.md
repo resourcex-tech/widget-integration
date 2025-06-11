@@ -46,11 +46,31 @@ Contact the Product Suite team to obtain these credentials.
 
 ---
 
-### 2. Add the exploaded Diagram
+### 2. Add the Widget Containers
 
 ```html
+<!-- 🧩 Parts Display Widget -->
 <div
-  id="onsense-exploded-views"
-  class="h-[1700px] md:h-[1200px] w-full mb-10"
+        id="onsense-parts"
+        class="h-[1500px] md:h-[800px] w-full my-10"
 ></div>
+
+<!-- 🔍 Exploded Views Widget -->
+<div
+        id="onsense-exploded-views"
+        class="h-[1700px] md:h-[1200px] w-full mb-10"
+></div>
+
+<!-- 🚨 Error Codes Mapping Widget -->
+<div
+        id="onsense-error-codes"
+        class="h-[560px] md:h-[400px] w-full mb-10"
+></div>
+
+<!-- 📘 Model Documentation Widget -->
+<div
+        id="onsense-docs"
+        class="h-[1200px] md:h-[700px] w-full"
+></div>
+
 ```
