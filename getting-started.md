@@ -1,0 +1,43 @@
+## 🧩 Installation Guide
+
+### 1. Add the Script Tag
+
+Paste this inside your HTML (or inside `useEffect` in React):
+
+```html
+<script
+  id="onsense-product-suite"
+  src="https://product-suite-hazel.vercel.app/product-suite.js"
+  data-color="#041E50"
+  data-text-color="#252928"
+  data-border-radius="3px"
+  data-model-id="your_model_id"
+  data-model-number="your_model_number"
+  data-part-id="part_id"
+  data-user-id="your_user_id"
+  data-project-id="your_project_id"
+  data-origin="https://your-website.com"
+  data-questions='[{"question": "Example?"}]'
+  defer
+></script>
+```
+
+### 📌 Note
+
+The following fields will be provided on request:
+
+- `data-user-id`
+- `data-project-id`
+
+Contact the Product Suite team to obtain these credentials.
+
+---
+
+### 2. Add the Container
+
+```html
+<div
+  id="onsense-exploded-views"
+  class="h-[1700px] md:h-[1200px] w-full mb-10"
+></div>
+```
